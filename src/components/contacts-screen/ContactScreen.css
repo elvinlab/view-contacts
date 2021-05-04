@@ -1,0 +1,100 @@
+.container {
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.buttonAdd {
+  background-image: linear-gradient(315deg, #446e48 0%, #233329 74%);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-bottom: 50px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  color: #fff;
+  background-color: #63d471;
+  background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+  padding: 2em 0;
+  align-items: center;
+}
+
+.contact-filter {
+  font-size: 1.2em;
+  padding: 0.3em 0.3em;
+  border-radius: 100px;
+  border: 1px solid white;
+  outline: none;
+}
+
+.contacts {
+  background: #313438;
+}
+
+.add {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+i {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.contact-name {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+hr {
+  border: 1px solid #aca7a7;
+}
+
+.list__element {
+  list-style: none;
+}
+
+.contact-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6em;
+  transition: 0.3s;
+}
+
+.contact-section:hover {
+  background-color: #000000;
+  background-image: linear-gradient(315deg, #000000 0%, #7f8c8d 74%);
+}
+
+.edit-contact {
+  padding-left: 1em;
+}
+.remove-contact:hover {
+  color: red;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.edit-contact:hover {
+  color: orange;
+  transition: 0.3s;
+}

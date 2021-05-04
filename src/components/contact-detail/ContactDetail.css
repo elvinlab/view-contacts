@@ -1,0 +1,78 @@
+.container {
+  margin: 0 auto;
+  background-color: #313438;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header-contact {
+  color: white;
+  background-color: #63d471;
+  background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+  padding: 1em 0;
+}
+
+.back-btn {
+  color: #fff;
+  font-size: 1.7em;
+  padding-left: 1em;
+}
+
+.info {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.info-form {
+  display: flex;
+  color: #fff;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1em;
+  margin-top: 2em;
+  border-radius: 20px;
+}
+
+.icon-gradient {
+  background-color: #63d471;
+  background-image: linear-gradient(315deg, #63d471 0%, #233329 90%);
+  border-radius: 100px;
+  font-size: 1.5em;
+  padding: 0.5em;
+}
+
+.type {
+  border: none;
+  background: #ffffff;
+  padding-left: 2em;
+  font-size: 1.2em;
+  border-radius: 20px;
+  color: rgb(53, 52, 52);
+  outline: none;
+  margin-left: 0.5rem;
+}
+
+.button {
+  background-image: linear-gradient(315deg, #446e48 0%, #233329 74%);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 50px;
+}
+
+.button:hover {
+  background-color: #63d471;
+  background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+  transition: 0.3s;
+}
