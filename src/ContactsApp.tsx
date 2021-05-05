@@ -1,10 +1,10 @@
-import { AppRouter } from "./router/AppRouter";
+import { AppRouter } from './router/AppRouter';
 
-import "./ContactsApp.css"
+import './ContactsApp.css';
 export const ContactsApp = () => {
-  return (
-    <div>
-     <AppRouter />
-    </div>
-  );
+    return (
+        <div>
+            <AppRouter />
+        </div>
+    );
 };
