@@ -19,7 +19,7 @@ export const AppRouter = () => {
                 <div>
                     <Switch>
                         <Route exact path="/contactos" component={ContactScreen} />
-                        <Route exact path="/:key/:action" component={ContactDetail} />
+                        <Route exact path="/:action/:uuid" component={ContactDetail} />
                         <Redirect to="/contactos" />
                     </Switch>
                 </div>

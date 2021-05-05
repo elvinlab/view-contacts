@@ -7,7 +7,7 @@ export const initialState: IContactState = {
 };
 
 export interface IContactActions {
-    type: 'ADD_CONTACT' | 'REMOVE_CONTACT' | 'CONTACT_SET_ACTIVE' | 'EDIT_CONTACT';
+    type: 'ADD_CONTACT' | 'REMOVE_CONTACT' | 'EDIT_CONTACT' | 'CONTACT_SET_ACTIVE';
     payload: IContact;
 }
 
@@ -30,17 +30,17 @@ export const contactReducer = (state: IContactState, action: IContactActions) =>
         case 'REMOVE_CONTACT':
             return {
                 ...state,
-                contacts: state.contacts.filter((e) => e.name !== action.payload.name)
+                contacts: state.contacts.filter((e) => e.uuid !== action.payload.uuid)
             };
 
         case 'EDIT_CONTACT':
             return {
                 ...state,
-                contacts: state.contacts.map((e) => (e.name === action.payload.name ? action.payload : e))
+                contacts: state.contacts.map((e) => (e.uuid === action.payload.uuid ? action.payload : e))
             };
 
         case 'CONTACT_SET_ACTIVE':
-            currentContact[contact.name] = contact;
+            currentContact[contact.uuid] = contact;
             return { ...state, currentContact };
 
         default:

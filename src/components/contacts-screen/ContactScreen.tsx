@@ -5,8 +5,10 @@ import { UseForm } from '../../hooks/UseForm';
 import Swal from 'sweetalert2';
 import ContactContext from '../../contexts/ContactContext';
 import SearchResults from 'react-filter-search';
+import uuid from 'react-uuid';
 
-import './ContactScreen.css';
+import '../../assets/css/ContactScreen.css';
+
 import IContact from '../../interfaces/IContact';
 interface filter {
     search: string;
@@ -56,14 +58,14 @@ export const ContactScreen = () => {
                     renderResults={(results: any) => (
                         <section className="contacts">
                             {results.map((contact: IContact, index: number) => (
-                                <ul key={`${contact.name}:${index + 1}`} className="contacts-list">
+                                <ul key={`${contact.uuid}`} className="contacts-list">
                                     <div className="contact-section">
                                         <li className="list__element">
                                             <p className="contact-name">{`${contact.name} ${contact.surnames}`}</p>
                                         </li>
                                         <li className="list__element" onClick={() => contactDispatch({ type: 'CONTACT_SET_ACTIVE', payload: contact })}>
                                             <i onClick={() => removeContact(contact)} className="far fa-trash-alt remove-contact"></i>
-                                            <Link to={`/${contact.name}/editar`}>
+                                            <Link to={`/editar/${contact.uuid}`}>
                                                 <i className="far fa-edit edit-contact"></i>
                                             </Link>
                                         </li>
@@ -78,7 +80,7 @@ export const ContactScreen = () => {
             ) : (
                 <p className="contact-name">No tiene contactos</p>
             )}
-            <Link to="/contacto/agregar" className="buttonAdd">
+            <Link to={`/agregar/${uuid()}`} className="buttonAdd">
                 Agregar contacto
             </Link>
         </div>

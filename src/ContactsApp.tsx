@@ -1,6 +1,7 @@
 import { AppRouter } from './router/AppRouter';
 
-import './ContactsApp.css';
+import './assets/css/ContactsApp.css';
+
 export const ContactsApp = () => {
     return (
         <div>

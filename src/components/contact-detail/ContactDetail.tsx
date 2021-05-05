@@ -5,18 +5,18 @@ import Swal from 'sweetalert2';
 import ContactContext from '../../contexts/ContactContext';
 import IContact from '../../interfaces/IContact';
 
-import './ContactDetail.css';
-
+import '../../assets/css/ContactDetail.css';
 interface RouteParams {
-    key: string;
+    uuid: string;
     action: string;
 }
 
 export const ContactDetail = () => {
-    let { key, action } = useParams<RouteParams>();
+    let { uuid, action } = useParams<RouteParams>();
     const [redirect, setRedirect] = useState<boolean>(false);
 
     const [formValues, setFormValues] = useState<IContact>({
+        uuid: uuid,
         name: '',
         surnames: '',
         province: '',
@@ -29,10 +29,10 @@ export const ContactDetail = () => {
     } = useContext(ContactContext);
 
     useEffect(() => {
-        if (currentContact[key]) {
-            setFormValues(currentContact[key]);
+        if (currentContact[uuid]) {
+            setFormValues(currentContact[uuid]);
         }
-    }, [currentContact, key]);
+    }, [currentContact, uuid]);
 
     const { name, surnames, province, phone } = formValues;
 
@@ -50,7 +50,7 @@ export const ContactDetail = () => {
             return Swal.fire('Error', 'Ingresar número válido', 'error');
         }
 
-        if (currentContact[key]) {
+        if (currentContact[uuid]) {
             contactDispatch({ type: 'EDIT_CONTACT', payload: formValues });
         } else {
             contactDispatch({ type: 'ADD_CONTACT', payload: formValues });
@@ -69,7 +69,7 @@ export const ContactDetail = () => {
                     </Link>
 
                     <div className="info">
-                        <h1 className="name">{action === 'agregar' ? 'Agregar contacto' : 'Nombre'}</h1>
+                        <h1 className="name">{action === 'agregar' ? 'Agregar contacto' : currentContact[uuid].name}</h1>
                     </div>
                 </header>
 
@@ -91,7 +91,7 @@ export const ContactDetail = () => {
 
                     <div className="info-form">
                         <i className="fas fa-phone icon-gradient"></i>
-                        <input required type="number" className="type" name="phone" placeholder="Número de teléfono" value={phone} onChange={handleInputChange} />
+                        <input required type="text" className="type" name="phone" placeholder="Número de teléfono" maxLength={8} value={phone} onChange={handleInputChange} pattern="[0-9]+" />
                     </div>
 
                     <button className="button" type="submit">
